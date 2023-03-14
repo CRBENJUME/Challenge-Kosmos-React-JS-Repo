@@ -10,13 +10,13 @@ export default function App () {
   const [img, setImg] = useState([]);
 
   useEffect(() => {
-    /*fetch(api)
+    fetch('https://jsonplaceholder.typicode.com/photos?albumId=1')
       .then((response) => {
         return response.json();
       })
       .then((img) => {
         setImg(img);
-      });*/
+      });
   }, []);
 
   const addMoveable = () => {
