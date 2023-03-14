@@ -1,5 +1,6 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Moveable from "react-moveable";
+import "../styles.css"
 
 export default function Component ({
     updateMoveable,

@@ -1,8 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Component from "./components/component";
+import "./styles.css"
 
 const COLORS = ['red', 'blue', 'yellow', 'green', 'purple'];
-const BGSIZE = ['contain', 'cover', 'fill', 'scale-down', 'none'];
+const SIZE = ['contain', 'cover', 'fill', 'scale-down', 'none'];
 
 export default function App () {
   const [moveableComponents, setMoveableComponents] = useState([]);
@@ -32,7 +33,7 @@ export default function App () {
         height: 100,
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
         updateEnd: true,
-        imageBgSize: BGSIZE[Math.floor(Math.random() * BGSIZE.length)],
+        imgSIZE: SIZE[Math.floor(Math.random() * SIZE.length)],
       },
     ]);
   };
@@ -55,35 +56,13 @@ export default function App () {
 
   return (
     <main style={{ height: '100vh', width: '100vw' }}>
-      <button
-        type="button"
-        onClick={addMoveable}
-        style={{
-          background: 'none',
-          backgroundImage: 'linear-gradient(to bottom right, #FF416C, #FF4B2B)',
-          padding: '9px 12px 8px',
-          color: ' #FFFFFF',
-          borderRadius: '6px',
-          border: 'none',
-          outline: 'none',
-          fontWeight: '600',
-          cursor: 'pointer',
-        }}
-      >
+      <button className="button" onClick={addMoveable}>
         Add Moveable
       </button>
-      <button onClick={()=>removeComponent(selected)}>
+      <button className="button" onClick={()=>removeComponent(selected)}>
         Remove Moveable
       </button>
-      <div
-        id="parent"
-        style={{
-          position: 'relative',
-          backgroundImage: 'linear-gradient(to bottom right, #0F2027, #203A43, #2C5364)',
-          height: '80vh',
-          width: '80vw',
-        }}
-      >
+      <div id="parent" className="divider">
         {moveableComponents.map((item, index) => (
           <Component 
             {...item} 

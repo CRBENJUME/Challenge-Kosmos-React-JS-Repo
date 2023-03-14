@@ -14,11 +14,21 @@
 
 .button {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  background: none;
+  background-image: linear-gradient(to bottom right, #FF416C, #FF4B2B);
+  padding: 9px 12px 8px;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+  border-radius: 6px;
   border: none;
-  font-size: 8px;
+  outline: none;
+  font-weight: '600';
+  cursor: pointer;
+}
+
+.divider {
+  position: relative;
+  background-image: linear-gradient(to bottom right, #0F2027, #203A43, #2C5364);
+  height: 80vh;
+  width: 80vw;
 }
